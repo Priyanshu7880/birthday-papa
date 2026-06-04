@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday, Papa 🎂</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ══════════ PRELOADER ══════════ -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="crown-icon">♛</div>
+      <div class="preloader-text">A Gift of Love</div>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ CANVAS: PARTICLES + CONFETTI ══════════ -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ══════════ FLOATING BALLOONS ══════════ -->
+  <div id="balloonContainer"></div>
+
+  <!-- ══════════ STARS BG ══════════ -->
+  <div class="stars" id="starsContainer"></div>
+
+  <!-- ══════════ HERO SECTION ══════════ -->
+  <section class="hero" id="home">
+    <div class="hero-glow-orb orb1"></div>
+    <div class="hero-glow-orb orb2"></div>
+    <div class="hero-glow-orb orb3"></div>
+
+    <div class="hero-content">
+      <div class="badge-crown animate-fadeInDown">♛ A Son's Tribute ♛</div>
+
+      <h1 class="hero-title animate-fadeInUp">
+        <span class="title-line1">Happy</span>
+        <span class="title-line2">Birthday</span>
+        <span class="title-line3">Dear Papa</span>
+      </h1>
+
+      <div class="hero-divider animate-fadeIn">
+        <span class="divider-line"></span>
+        <span class="divider-diamond">◆</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <p class="hero-subtitle animate-fadeInUp delay-3">
+        Today the world celebrates the man who is my entire universe —<br/>
+        my strength, my guide, my forever hero.
+      </p>
+
+      <div class="hero-date animate-fadeInUp delay-4">
+        <span class="date-label">The Grand Celebration</span>
+        <span class="date-value" id="birthdayDate"></span>
+      </div>
+
+      <a href="#memories" class="cta-btn animate-fadeInUp delay-5">
+        <span>Explore the Tribute</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+
+    <!-- Floating rings -->
+    <div class="floating-ring ring1"></div>
+    <div class="floating-ring ring2"></div>
+    <div class="floating-ring ring3"></div>
+
+    <!-- Decorative corner stickers -->
+    <div class="corner-sticker cs-tl">🎊</div>
+    <div class="corner-sticker cs-tr">🎉</div>
+    <div class="corner-sticker cs-bl">👨‍👦</div>
+    <div class="corner-sticker cs-br">👑</div>
+  </section>
+
+  <!-- ══════════ COUNTDOWN ══════════ -->
+  <section class="countdown-section" id="countdown">
+    <div class="section-header">
+      <div class="section-badge">⏳ Timeless Moments</div>
+      <h2 class="section-title">Countdown to Papa's Big Day — June 9, 2026</h2>
+    </div>
+    <div class="countdown-grid">
+      <div class="countdown-card glass-card">
+        <div class="countdown-num" id="cd-days">00</div>
+        <div class="countdown-label">Days</div>
+        <div class="card-glow"></div>
+      </div>
+      <div class="countdown-card glass-card">
+        <div class="countdown-num" id="cd-hours">00</div>
+        <div class="countdown-label">Hours</div>
+        <div class="card-glow"></div>
+      </div>
+      <div class="countdown-card glass-card">
+        <div class="countdown-num" id="cd-mins">00</div>
+        <div class="countdown-label">Minutes</div>
+        <div class="card-glow"></div>
+      </div>
+      <div class="countdown-card glass-card">
+        <div class="countdown-num" id="cd-secs">00</div>
+        <div class="countdown-label">Seconds</div>
+        <div class="card-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ HEARTFELT MESSAGE — REMOVED ══════════ -->
+
+  <!-- ══════════ GOLDEN QUALITIES — REMOVED ══════════ -->
+
+  <!-- ══════════ FATHER & SON BOND SECTION ══════════ -->
+  <section class="fatherson-section" id="fatherson">
+    <div class="section-header">
+      <div class="section-badge">👨‍👦 The Greatest Bond</div>
+      <h2 class="section-title">A Father & His Son</h2>
+      <div class="hero-divider">
+        <span class="divider-line"></span>
+        <span class="divider-diamond">◆</span>
+        <span class="divider-line"></span>
+      </div>
+    </div>
+
+    <!-- Big sticker row -->
+    <div class="fs-sticker-row">
+      <div class="fs-sticker-card glass-card" data-delay="0">
+        <div class="fs-sticker-emoji">👨‍👦</div>
+        <div class="fs-sticker-label">Father & Son</div>
+      </div>
+      <div class="fs-sticker-card glass-card" data-delay="120">
+        <div class="fs-sticker-emoji">🤝</div>
+        <div class="fs-sticker-label">Partners in Life</div>
+      </div>
+      <div class="fs-sticker-card glass-card" data-delay="240">
+        <div class="fs-sticker-emoji">🛡️</div>
+        <div class="fs-sticker-label">My Protector</div>
+      </div>
+      <div class="fs-sticker-card glass-card" data-delay="360">
+        <div class="fs-sticker-emoji">❤️</div>
+        <div class="fs-sticker-label">Unconditional Love</div>
+      </div>
+      <div class="fs-sticker-card glass-card" data-delay="480">
+        <div class="fs-sticker-emoji">🌟</div>
+        <div class="fs-sticker-label">My Guiding Star</div>
+      </div>
+    </div>
+
+    <!-- Quote cards -->
+    <div class="fs-quotes-grid">
+      <div class="fs-quote-card glass-card" data-delay="0">
+        <div class="fs-quote-icon">💬</div>
+        <p class="fs-quote-text">"A father is someone you look up to no matter how tall you grow."</p>
+        <div class="fs-quote-emoji">👨‍👦</div>
+      </div>
+      <div class="fs-quote-card glass-card featured" data-delay="150">
+        <div class="fs-quote-icon">👑</div>
+        <p class="fs-quote-text">"The bond between a father and son is like a bridge — it holds through every storm, every weight, every season of life."</p>
+        <div class="fs-quote-emoji">🌉</div>
+      </div>
+      <div class="fs-quote-card glass-card" data-delay="300">
+        <div class="fs-quote-icon">💬</div>
+        <p class="fs-quote-text">"Papa — my first hero, my forever friend, my greatest blessing."</p>
+        <div class="fs-quote-emoji">🙏</div>
+      </div>
+    </div>
+
+    <!-- Emotional bond strip -->
+    <div class="fs-bond-strip">
+      <div class="fs-bond-item" data-delay="0">
+        <span class="fs-bond-emoji">👶</span>
+        <span class="fs-bond-arrow">→</span>
+        <span class="fs-bond-emoji">👦</span>
+        <span class="fs-bond-arrow">→</span>
+        <span class="fs-bond-emoji">🧒</span>
+        <span class="fs-bond-arrow">→</span>
+        <span class="fs-bond-emoji">👨</span>
+        <span class="fs-bond-text">Growing up, always by your side</span>
+      </div>
+    </div>
+
+    <!-- Floating badge stickers around section -->
+    <div class="fs-float-badge b1">🎯</div>
+    <div class="fs-float-badge b2">💪</div>
+    <div class="fs-float-badge b3">📚</div>
+    <div class="fs-float-badge b4">🌈</div>
+    <div class="fs-float-badge b5">🦁</div>
+    <div class="fs-float-badge b6">⭐</div>
+  </section>
+
+  <!-- ══════════ MEMORY TIMELINE — REMOVED ══════════ -->
+
+  <!-- ══════════ WISHES SECTION ══════════ -->
+  <section class="wishes-section" id="wishes">
+    <div class="section-header">
+      <div class="section-badge">🎁 Birthday Wishes</div>
+      <h2 class="section-title">May Your Day Be as Wonderful as You</h2>
+    </div>
+
+    <div class="wishes-grid">
+      <div class="wish-card glass-card">
+        <div class="wish-icon">🌹</div>
+        <p>May every flower bloom in your honor today, filling your world with beauty that matches your soul.</p>
+      </div>
+      <div class="wish-card glass-card">
+        <div class="wish-icon">☀️</div>
+        <p>May the sun shine a little brighter for you today, warming you with the light of all our love.</p>
+      </div>
+      <div class="wish-card glass-card">
+        <div class="wish-icon">🥂</div>
+        <p>May every sip of joy be sweeter, every laugh be louder, and every moment be one you treasure forever.</p>
+      </div>
+      <div class="wish-card glass-card">
+        <div class="wish-icon">🌙</div>
+        <p>May your nights be peaceful, your dreams be grand, and your heart always know how deeply you are loved.</p>
+      </div>
+      <div class="wish-card glass-card">
+        <div class="wish-icon">💫</div>
+        <p>May the universe conspire to give you everything you've silently wished for all these years.</p>
+      </div>
+      <div class="wish-card glass-card">
+        <div class="wish-icon">🎶</div>
+        <p>May your life always have music, your days always have purpose, and your heart always have peace.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CAKE SECTION ══════════ -->
+  <section class="cake-section" id="cake">
+    <div class="section-header">
+      <div class="section-badge">🎂 Make a Wish</div>
+      <h2 class="section-title">Blow Out the Candles, Papa</h2>
+      <p class="section-subtitle">Click on the cake to blow out the candles and make a wish!</p>
+    </div>
+
+    <div class="cake-wrapper">
+      <div class="cake" id="cakeEl" onclick="blowCandles()">
+        <!-- Candles -->
+        <div class="candles-row" id="candleRow">
+          <div class="candle"><div class="flame" id="f1"></div></div>
+          <div class="candle"><div class="flame" id="f2"></div></div>
+          <div class="candle"><div class="flame" id="f3"></div></div>
+          <div class="candle"><div class="flame" id="f4"></div></div>
+          <div class="candle"><div class="flame" id="f5"></div></div>
+        </div>
+        <!-- Cake tiers -->
+        <div class="cake-tier tier1">
+          <div class="tier-decoration">★ ◆ ★ ◆ ★</div>
+        </div>
+        <div class="cake-tier tier2">
+          <div class="tier-decoration">Happy Birthday Papa</div>
+        </div>
+        <div class="cake-tier tier3">
+          <div class="tier-decoration">◇ With Love ◇</div>
+        </div>
+        <div class="cake-plate"></div>
+      </div>
+      <div class="cake-wish-msg" id="cakeMsg">✨ Your wish is sent to the universe! ✨</div>
+    </div>
+  </section>
+
+  <!-- ══════════ PHOTO GALLERY — PREMIUM MASONRY ══════════ -->
+  <section class="gallery-section" id="gallery">
+    <div class="section-header">
+      <div class="section-badge">📸 Precious Frames</div>
+      <h2 class="section-title">Moments Frozen in Gold</h2>
+      <p class="section-subtitle">Every picture tells a story of love 💛</p>
+    </div>
+
+    <!-- Row 1: 1 big + 2 small -->
+    <div class="mg-row mg-row1">
+      <div class="mg-item mg-big" data-idx="0">
+        <img src="images/papa1.jpeg" alt="Memory 1" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+        <div class="mg-overlay">
+          <div class="mg-caption">Our Beautiful Memories ✨</div>
+          <div class="mg-zoom">🔍</div>
+        </div>
+        <div class="mg-err-inner"><span>👨‍👦</span><span>Family</span></div>
+      </div>
+      <div class="mg-col2">
+        <div class="mg-item mg-med" data-idx="1">
+          <img src="images/papa2.jpeg" alt="Memory 2" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+          <div class="mg-overlay"><div class="mg-caption">A Thousand Words 💛</div><div class="mg-zoom">🔍</div></div>
+          <div class="mg-err-inner"><span>❤️</span><span>Love</span></div>
+        </div>
+        <div class="mg-item mg-med" data-idx="2">
+          <img src="images/papa3.jpeg" alt="Memory 3" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+          <div class="mg-overlay"><div class="mg-caption">Together Always 🌟</div><div class="mg-zoom">🔍</div></div>
+          <div class="mg-err-inner"><span>🌟</span><span>Together</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: 3 equal -->
+    <div class="mg-row mg-row2">
+      <div class="mg-item mg-eq" data-idx="3">
+        <img src="images/papa4.jpeg" alt="Memory 4" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+        <div class="mg-overlay"><div class="mg-caption">Cherished Moments 🏡</div><div class="mg-zoom">🔍</div></div>
+        <div class="mg-err-inner"><span>🏡</span><span>Home</span></div>
+      </div>
+      <div class="mg-item mg-eq mg-feature" data-idx="4">
+        <img src="images/papa5.jpeg" alt="Memory 5" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+        <div class="mg-overlay"><div class="mg-caption">Pure Joy ☀️</div><div class="mg-zoom">🔍</div></div>
+        <div class="mg-err-inner"><span>☀️</span><span>Joy</span></div>
+        <div class="mg-gold-badge">💛 Featured</div>
+      </div>
+      <div class="mg-item mg-eq" data-idx="5">
+        <img src="images/papa6.jpeg" alt="Memory 6" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+        <div class="mg-overlay"><div class="mg-caption">Love & Laughter ❤️</div><div class="mg-zoom">🔍</div></div>
+        <div class="mg-err-inner"><span>❤️</span><span>Laughter</span></div>
+      </div>
+    </div>
+
+    <!-- Row 3: 2 small + 1 big -->
+    <div class="mg-row mg-row3">
+      <div class="mg-col2">
+        <div class="mg-item mg-med" data-idx="6">
+          <img src="images/papa7.jpeg" alt="Memory 7" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+          <div class="mg-overlay"><div class="mg-caption">Golden Days 👑</div><div class="mg-zoom">🔍</div></div>
+          <div class="mg-err-inner"><span>👑</span><span>Golden</span></div>
+        </div>
+        <div class="mg-item mg-med" data-idx="7">
+          <img src="images/papa8.jpeg" alt="Memory 8" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+          <div class="mg-overlay"><div class="mg-caption">Forever in My Heart 💫</div><div class="mg-zoom">🔍</div></div>
+          <div class="mg-err-inner"><span>💫</span><span>Forever</span></div>
+        </div>
+      </div>
+      <div class="mg-item mg-big" data-idx="8">
+        <img src="images/papa9.jpeg" alt="Memory 9" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+        <div class="mg-overlay"><div class="mg-caption">My Greatest Blessing 🙏</div><div class="mg-zoom">🔍</div></div>
+        <div class="mg-err-inner"><span>🙏</span><span>Blessing</span></div>
+      </div>
+    </div>
+
+    <!-- Row 4: 4 small equal -->
+    <div class="mg-row mg-row4">
+      <div class="mg-item mg-sm" data-idx="9">
+        <img src="images/papa10.jpeg" alt="Memory 10" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+        <div class="mg-overlay"><div class="mg-caption">Strength & Grace 💪</div><div class="mg-zoom">🔍</div></div>
+        <div class="mg-err-inner"><span>💪</span><span>Strength</span></div>
+      </div>
+      <div class="mg-item mg-sm" data-idx="10">
+        <img src="images/papa11.jpeg" alt="Memory 11" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+        <div class="mg-overlay"><div class="mg-caption">My Hero 🛡️</div><div class="mg-zoom">🔍</div></div>
+        <div class="mg-err-inner"><span>🛡️</span><span>Hero</span></div>
+      </div>
+      <div class="mg-item mg-sm" data-idx="11">
+        <img src="images/papa12.jpeg" alt="Memory 12" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+        <div class="mg-overlay"><div class="mg-caption">Precious Times 🌅</div><div class="mg-zoom">🔍</div></div>
+        <div class="mg-err-inner"><span>🌅</span><span>Precious</span></div>
+      </div>
+      <div class="mg-item mg-sm" data-idx="12">
+        <img src="images/papa13.jpeg" alt="Memory 13" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+        <div class="mg-overlay"><div class="mg-caption">Adventures 🌄</div><div class="mg-zoom">🔍</div></div>
+        <div class="mg-err-inner"><span>🌄</span><span>Adventure</span></div>
+      </div>
+    </div>
+
+    <!-- Row 5: wide banner -->
+    <div class="mg-row mg-row5">
+      <div class="mg-item mg-wide" data-idx="13">
+        <img src="images/papa14.jpeg" alt="Memory 14" onerror="this.onerror=null;this.src='';this.parentNode.classList.add('mg-err')"/>
+        <div class="mg-overlay">
+          <div class="mg-caption-wide">
+            <span class="mg-caption-big">Side by Side 🤝</span>
+            <span class="mg-caption-sub">Always & Forever, Papa 💛</span>
+          </div>
+          <div class="mg-zoom">🔍</div>
+        </div>
+        <div class="mg-err-inner"><span>🤝</span><span>Side by Side</span></div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <div class="lightbox-inner" onclick="event.stopPropagation()">
+        <button class="lb-close" onclick="closeLightbox()">✕</button>
+        <button class="lb-nav lb-prev" onclick="lbNav(-1)">&#8249;</button>
+        <img class="lb-img" id="lbImg" src="" alt=""/>
+        <div class="lb-caption" id="lbCaption"></div>
+        <button class="lb-nav lb-next" onclick="lbNav(1)">&#8250;</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════ FINAL TRIBUTE ══════════ -->
+  <section class="tribute-section" id="tribute">
+    <div class="tribute-glow"></div>
+    <div class="tribute-content glass-card">
+      <div class="tribute-crown">♛</div>
+      <h2 class="tribute-title">To the King of My World</h2>
+      <p class="tribute-text">
+        No gift can measure the love I have for you. No words are grand enough.
+        But I hope this small tribute — made with every ounce of my heart — lets you feel,
+        even for a moment, just how extraordinary you truly are.
+      </p>
+      <p class="tribute-text">
+        You are the reason I believe in goodness. You are the reason I reach higher.
+        You are my greatest blessing.
+      </p>
+      <div class="tribute-signature">
+        <div class="sig-line">Forever and Always,</div>
+        <div class="sig-name">Your Proud Son 💛</div>
+      </div>
+      <div class="tribute-divider">
+        <span>◆ ◇ ◆ ◇ ◆</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-crown">♛</div>
+      <p class="footer-text">Made with infinite love for the most remarkable man I know.</p>
+      <p class="footer-year">Happy Birthday, Papa — <span id="currentYear"></span></p>
+    </div>
+  </footer>
+
+  <!-- ══════════ SCROLL TO TOP ══════════ -->
+  <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+
+  <!-- ══════════ MUSIC TOGGLE ══════════ -->
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Play Birthday Music">
+    <span id="musicIcon">🎵</span>
+    <span class="music-label" id="musicLabel">Play Music</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
