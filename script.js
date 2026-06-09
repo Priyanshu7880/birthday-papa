@@ -450,9 +450,23 @@ function toggleMusic() {
   }
 }
 
-// Remove old autoplay attempt references
+// Auto-start music on first ANY user interaction
 let autoplayAttempted = false;
-function attemptAutoplay() { /* disabled — user clicks the button */ }
+function attemptAutoplay() {
+  if (autoplayAttempted) return;
+  autoplayAttempted = true;
+  initAudio();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  musicPlaying = true;
+  playMelody();
+  musicIcon.textContent  = '🔇';
+  musicLabel.textContent = 'Stop Music';
+  musicBtn.classList.add('playing');
+}
+document.addEventListener('click',      attemptAutoplay, { once: true });
+document.addEventListener('touchstart', attemptAutoplay, { once: true });
+document.addEventListener('scroll',     attemptAutoplay, { once: true });
+document.addEventListener('keydown',    attemptAutoplay, { once: true });
 
 /* ─── Smooth Scroll for nav link ────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
