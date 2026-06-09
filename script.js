@@ -53,7 +53,7 @@ document.getElementById('currentYear').textContent = today.getFullYear();
     'radial-gradient(circle at 35% 35%, #fff, #ccc)',
   ];
 
-  for (let i = 0; i < 22; i++) {
+  for (let i = 0; i < 10; i++) {
     const b = document.createElement('div');
     b.className = 'balloon';
     const drift = (Math.random() - 0.5) * 200;
@@ -829,9 +829,9 @@ setTimeout(initFireworks, 2800);
     setTimeout(() => el.remove(), (dur + delay) * 1000 + 500);
   }
 
-  // Spawn stickers continuously
-  for (let i = 0; i < 20; i++) setTimeout(spawnSticker, i * 800);
-  setInterval(spawnSticker, 700);
+  // Spawn stickers continuously — reduced count
+  for (let i = 0; i < 8; i++) setTimeout(spawnSticker, i * 1500);
+  setInterval(spawnSticker, 2500);
 })();
 
 /* ════════════════════════════════════════════════════════
@@ -873,8 +873,8 @@ setTimeout(initFireworks, 2800);
 
   // Start streamers after a short delay
   setTimeout(() => {
-    for (let i = 0; i < 8; i++) setTimeout(spawnStreamer, i * 400);
-    setInterval(spawnStreamer, 600);
+    for (let i = 0; i < 4; i++) setTimeout(spawnStreamer, i * 600);
+    setInterval(spawnStreamer, 2000);
   }, 3000);
 })();
 
