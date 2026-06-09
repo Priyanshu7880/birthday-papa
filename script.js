@@ -247,34 +247,23 @@ function animateConfetti() {
 
 /* ─── Countdown Timer ────────────────────────────────── */
 function updateCountdown() {
-  const now      = new Date();
-  const birthday = new Date(2026, 5, 9, 0, 0, 0); // June 9, 2026
-
-  // Check if today IS the birthday
-  const isToday = (now.getFullYear() === 2026 && now.getMonth() === 5 && now.getDate() === 9)
-               || (now.getFullYear() === birthday.getFullYear() && now.getMonth() === birthday.getMonth() && now.getDate() === birthday.getDate());
+  const now = new Date();
+  const isToday = (now.getMonth() === 5 && now.getDate() === 9); // June 9
 
   const cdSection = document.querySelector('.countdown-section .section-title');
+  const labels = document.querySelectorAll('.countdown-label');
 
   if (isToday) {
-    // Count UP from midnight — how long the celebration has been going
-    const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
-    const elapsed  = Math.floor((now - midnight) / 1000);
-    const h = Math.floor(elapsed / 3600);
-    const m = Math.floor((elapsed % 3600) / 60);
-    const s = elapsed % 60;
-    const fmt = n => String(n).padStart(2, '0');
-    document.getElementById('cd-days').textContent  = '🎂';
-    document.getElementById('cd-hours').textContent = fmt(h);
-    document.getElementById('cd-mins').textContent  = fmt(m);
-    document.getElementById('cd-secs').textContent  = fmt(s);
-    // Update labels
-    const labels = document.querySelectorAll('.countdown-label');
-    if (labels[0]) labels[0].textContent = 'Birthday!';
+    // Birthday today — show 00 00 00 00
+    document.getElementById('cd-days').textContent  = '00';
+    document.getElementById('cd-hours').textContent = '00';
+    document.getElementById('cd-mins').textContent  = '00';
+    document.getElementById('cd-secs').textContent  = '00';
+    if (labels[0]) labels[0].textContent = 'Days';
     if (labels[1]) labels[1].textContent = 'Hours';
     if (labels[2]) labels[2].textContent = 'Minutes';
     if (labels[3]) labels[3].textContent = 'Seconds';
-    if (cdSection) cdSection.textContent = '🎉 Happy Birthday Papa! The Party Has Begun!';
+    if (cdSection) cdSection.innerHTML = '🎉 Happy Birthday Papa! 🎂';
   } else {
     // Count DOWN to next June 9
     let target = new Date(now.getFullYear(), 5, 9, 0, 0, 0);
@@ -289,7 +278,6 @@ function updateCountdown() {
     document.getElementById('cd-hours').textContent = fmt(hours);
     document.getElementById('cd-mins').textContent  = fmt(mins);
     document.getElementById('cd-secs').textContent  = fmt(secs);
-    const labels = document.querySelectorAll('.countdown-label');
     if (labels[0]) labels[0].textContent = 'Days';
     if (labels[1]) labels[1].textContent = 'Hours';
     if (labels[2]) labels[2].textContent = 'Minutes';
