@@ -7,12 +7,36 @@
 
 /* ─── Preloader ─────────────────────────────────────── */
 window.addEventListener('load', () => {
+  const btn = document.getElementById('preloaderMusicBtn');
+  const pre = document.getElementById('preloader');
+
+  function startEverything() {
+    // Start music
+    initAudio();
+    if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+    if (!musicPlaying) {
+      musicPlaying = true;
+      playMelody();
+    }
+    // Hide preloader
+    setTimeout(() => {
+      pre.classList.add('hidden');
+      setTimeout(launchConfetti, 400);
+    }, 400);
+  }
+
+  // Click on button
+  if (btn) btn.addEventListener('click', startEverything);
+  // Also click anywhere on preloader
+  pre.addEventListener('click', startEverything);
+
+  // Auto-hide preloader after 3.5s even if not clicked
   setTimeout(() => {
-    const pre = document.getElementById('preloader');
-    if (pre) pre.classList.add('hidden');
-    // Burst confetti on load
-    setTimeout(launchConfetti, 400);
-  }, 2400);
+    if (!pre.classList.contains('hidden')) {
+      pre.classList.add('hidden');
+      setTimeout(launchConfetti, 400);
+    }
+  }, 3500);
 });
 
 /* ─── Birthday Date ──────────────────────────────────── */
@@ -450,23 +474,19 @@ function toggleMusic() {
   }
 }
 
-// Auto-start music on first ANY user interaction
+// Backup: also start music on any interaction if not already playing
 let autoplayAttempted = false;
 function attemptAutoplay() {
-  if (autoplayAttempted) return;
+  if (autoplayAttempted || musicPlaying) return;
   autoplayAttempted = true;
   initAudio();
-  if (audioCtx.state === 'suspended') audioCtx.resume();
+  if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
   musicPlaying = true;
   playMelody();
-  musicIcon.textContent  = '🔇';
-  musicLabel.textContent = 'Stop Music';
-  musicBtn.classList.add('playing');
 }
-document.addEventListener('click',      attemptAutoplay, { once: true });
-document.addEventListener('touchstart', attemptAutoplay, { once: true });
+document.addEventListener('click',      attemptAutoplay);
+document.addEventListener('touchstart', attemptAutoplay);
 document.addEventListener('scroll',     attemptAutoplay, { once: true });
-document.addEventListener('keydown',    attemptAutoplay, { once: true });
 
 /* ─── Smooth Scroll for nav link ────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
