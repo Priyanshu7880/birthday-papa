@@ -120,6 +120,29 @@ body {
   to { width: 100%; }
 }
 
+.preloader-music-btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+  color: var(--navy);
+  font-family: var(--ff-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(201,168,76,0.5);
+  animation: btnPulse 1.5s ease-in-out infinite;
+  user-select: none;
+}
+
+@keyframes btnPulse {
+  0%,100% { transform: scale(1);    box-shadow: 0 0 20px rgba(201,168,76,0.4); }
+  50%      { transform: scale(1.06); box-shadow: 0 0 40px rgba(201,168,76,0.8); }
+}
+
 /* ═══════════════════════════════════════════
    BALLOONS
 ═══════════════════════════════════════════ */
